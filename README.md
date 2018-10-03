@@ -1,28 +1,35 @@
+Project N-Dimensions and its author: florencio Valladlid Rodriguez
+-------------------------------------------------- ----
 
-Project N-Dimensiones y su autor: florencio Valladlid Rodriguez
-------------------------------------------------------
+ It leaves you free and full access to the first video game or 3D demo, "the lost city" as a powerful example of an app for the web,
+ that only needs the web browser of any device, of code free made
+ with the 3d engine or "blend4web" framework in javascript, html5 and css3, and the current state of development using only blender, gimp and audacity and notepad ++, has no
+ nothing to envy to genres of video games as shooters, puzzle, simulation, adventures ... etc of other engines that are generated as native app and require for its access to specific high-end equipment.
 
- Os deja accesi a su primer videojuego o demo 3D , "la ciudad perdida" como un poderoso ej de app para la web,
- que solo necesita el navegador web de cualquier dispositivo, de codigo realizado
- con el engine 3d, o framework  "blend4web" en javascript, html5 y css3, y el estado actual de desarrollo no tiene
- nada que envidiar a generos  de videojuegos shooter,puzzle, aventuras..etc  de otros engines que se generan como app nativas y requieren 
- para su acceso de equipos especificos de alta gama, su sencillez y rapida implementación, lo diferencia claramente para 
-ser ideal para iniciarse en desarrollos 3d, aprendizage y  este desarrollo, solo requiere apoyarlo en su crowdfounding 
- para llegar mas alla a ser un juego en linea multijugador y sin limites mas que el del hardware y el que nos van imponiendo los navegadores web
-que por suerte va mejorando dia a dia.
- Con vuestro apoyo podran salir incluso versiones de mayor resolución para el disfrute en equipos de alta gama.
-Mientras falte el apoyo, podra usar este codigo, se proporcionan los binarios proporcinoados en dir assets de
- las mallas pero segiran habiendo errores de no found de sus imagenes que supondra un palo al testarlo,
- pero ante semejante regao que ya os hago mas palo es dedicar tiempo a un proyecto sin este apoyo.
+Its simplicity and fast implementation, clearly differentiates it for
+be ideal to start in 3d developments, learning and this development, just need to support it in its crowdfounding
+ to get beyond it to be a multiplayer online game and without limits more than the hardware and that we are imposed by web browsers
+that luckily is improving day by day.
+ With your support, even higher resolution versions can be released for the enjoyment of high-end equipment.
+While the support is missing, you can use this code, the binaries provided in dir assets of
+ the meshes but they will be sure there are errors of not found of their images that will suppose a stick when testing it,
+ but in the face of such scolding that I already make you more stick is to dedicate time to a project without this support.
 
-demo reel
+Forecasts
+-----------------
+Of having the crowfounding support could do
+ the videotutorials, the you to explain in an organized way the already existing modules, starting with an access to the scene and little by little in the rest of the tutorials go interacting with the scene and managing gamepad and keyboard and touch, pick up objects , strike, shoot, take damage, save state game, ..etc A complete content for beginners.
+And the goal is to expand it with more effects thanks to the systems of particles, make more levels and improve the current levels with all the current deficiencies that do not prevent its functionality that every videogame developer wants. Remember to support the crowdfounding so that together we can achieve it.
+
+
+reel demo
 ------------
- 
- Para que veais rapidamente su potecial resumido hay la demo reel
- https://youtu.be/C-zYG_BbMJs
+ 
+ So that you can quickly see its potecial summary there is the demo reel
+ https://youtu.be/C-zYG_BbMJs
 
 
- 
+ 
 contact
 --------
 
@@ -34,60 +41,62 @@ https://www.linkedin.com/in/florenciovalladolidrodriguez/
 testing:
 ----------
 
-ya jugable directamente en 
+already playable directly on
 www.n-dimensiones.es
 
-recomiendo leer la guia antes
+I recommend reading the guide before
 https://www.n-dimensiones.es/main/blog
 
 
-Crowdfounding campaña para seguir desarrollando:
-apoyalo para que haya proximas salidas:  multiplayer, middle y alta resolution
+Crowdfounding campaign to continue developing:
+----------------------------------------------------------------
+I support it so that there are next outputs: multiplayer, middle and high resolution
 https://patreon.com/ndimensiones
+from $ 1 or € 1
 
 
-https://github.com/n-dimensiones
+
+https://github.com/n-dimensions
 
 version
 -------
- actual: 001
- 
-Se requiere descargar sdk free CE 17.12 o la LITE  o solo el addon de blend4web para usarlo en blender 2.79.
- Y sólo asi podras obtener tus propios modelos o los nombres en el codigo usado de las mallas y escenas .json y .bin files
-Se actualizo a la actual sdk18.05 porque ambas 17 y 18 ya usan modules de nodejs con javascript ES6, en lugar de la api  b4w.js previa pero
-como habian errores que ya no puede resolver mantuve la previa para que os llegue sino se hubiese retrasado 
-y no cuento ni con tiempo ni dinero para permitirmelo.  Si como os dije apoyais crowdfounding ,vuelvo a insistir segurametne si os la entregaria actualizada a sdk1 18.05 
-con javascript ES6
+ current: 001
+
+It is required to download sdk free CE 17.12 or the LITE or just the addon of blend4web to use it in blender 2.79.
+  And only then you can get your own models and keep the names in the used code of the meshes and scenes .json and .bin files
+It was updated to the current sdk18.05 because both 17 and 18 already use nodejs modules with javascript ES6, instead of the previous b4w.js api but
+Since there were errors that can not be resolved, I kept the previous one so that it arrives in September if it had not been delayed.
+and I do not have the time or money to allow it. If as I said you support crowdfounding, I insist again surely if I would deliver it updated to sdk1 18.05
+with javascript ES6
+
 
 
 Quick start
 -----------
 
 Clone the repo, `git clone https://github.com/n-dimensiones/the_city_lost.git`
- 
-Para descargar directorio /assets
-https://drive.google.com/open?id=1kHXAA4F-ATPKJa6XBT-kP51OIAy0pMQQ
 
+for download dir /assets
+https://drive.google.com/open?id=1kHXAA4F-ATPKJa6XBT-kP51OIAy0pMQQ
 
 
 
 Copyright and license
 ---------------------
 
-Licensed under GPL v3 license, se proporcionan los archivos fuente.
-Se adjunta file LICENSE
+Licensed under GPL v3 license, the source files are provided.
+Attached file LICENSE
 
-All image and audio files (including *.png, *.jpg, *.svg, *.mp3, *.wav 
-and *.ogg) are licensed under the CC-BY-NC license. No se proporcionan porque, se precisa apoyo al crowdfounding para mantener el proyecto y poder seguir desarrollando, ampliando y alcanzar los objetivos de hacer multiplayer y resoluciones de pantalla mejores, middle y high
-
-
+All image and audio files (including * .png, * .jpg, * .svg, * .mp3, * .wav
+and * .ogg) are licensed under the CC-BY-NC license. They are not provided because, crowdfounding support is needed to maintain the project and to be able to continue developing, expanding and achieving the objectives of making multiplayer and screen resolutions better, middle and high
 
 
-bugs_errores actuales
+
+current bugs_errors
 ---------------------
 
-Solo se registran los que salen al usar la portada o inicio pagina principal, si se ejecuta a modo testing sin estar en producion o sin simularlo
-Donde se requiere para no ver estos errors ej https, y requisitos de una app progresive con manifest
+Only those that come out when using the front page or start main page are registered, if it is executed in testing mode without being in production or without simulating it
+Where it is required to not see these errors eg https, and requirements of a progressive app with manifest
 
 A bad HTTP response code (404) was received when fetching the script.
 Failed to load resource: net::ERR_INVALID_RESPONSE
@@ -95,5 +104,3 @@ Failed to load resource: net::ERR_INVALID_RESPONSE
 Worker: A bad HTTP response code (404) was received when fetching the script.
 Promise.then (async)
 (anonymous) @ (index):1096
-
-
