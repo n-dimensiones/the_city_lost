@@ -1,0 +1,18 @@
+si nos fijamos en la imagen qual.png
+resulta que el ruso nosha dejado caos porque
+traduje sin duda como baja la high
+y la imagen original tiene las dos de arriba para el ruso
+la de arriba, la de la izq top, es sin dudala hight
+pero el css esta haciendo referencia sin duda a la 
+de abajo de la misma para la hight luego
+muestra la bja iluminada , el cambio de orden
+sin duda en el css y dejemos nos detraducciones erroneas
+quizas ellos pusieron realmente el nombre cambiado
+en ruso y cmo no lo entendemos nos liamos que no veas
+pero switch languaje nos dejo claro que hacemso click
+sobre la atenuada  en gris
+Entonces mientras no esta bien ajsutada
+al estar ej en eidioma ingles que todo es correcto
+la calidad arriba en la url muestra low
+si comuntas a idioma ruso(actualmente es) cambia a hight
+calidad la url

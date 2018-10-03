@@ -1,0 +1,1174 @@
+@font-face {
+    font-family: "Ruslan";
+    src: url("fonts/Ruslan_Display/RuslanDispalay_edit.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Linux_Biolinum";
+    src: url("fonts/Linux_Biolinum/LinBiolinum_R.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Linux_Biolinum_Bold";
+    src: url("fonts/Linux_Biolinum/LinBiolinum_RB.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Open Sans Semibold;
+    src: url(fonts/Open_Sans/OpenSans-Semibold.woff)
+}
+
+@font-face {
+    font-family: Open Sans;
+    src: url(fonts/Open_Sans/OpenSans-Regular.woff)
+}
+
+@font-face {
+    font-family: Open Sans Ultra Bold;
+    src: url(fonts/Open_Sans/OpenSans-ExtraBold.woff)
+}
+
+
+html {
+    font-family: Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);/*negro fondo sino sera blanco tras el background-color*/
+}
+
+/*primera extraccion
+@media (orientation : portrait) {   si dejamos landscape  parece que fuerza siempre en mobiles a estar en portrait posicion
+    html {
+        width: 100vh;
+        position: absolute;
+        height: 100vw;
+        -moz-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        -ms-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        -webkit-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        -moz-transform-origin: center;
+        -ms-transform-origin: center;
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+
+img {  /*otras apariciones en atlantida_1.css para el boton start_game y copyright para esta ultima no hay css propiedad alguna mas que su html aparicion
+    border: 0;
+    background-color: transparent;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+
+Comenzamos resumiendo que aporta este generic .css , y es botones life, botones de armas, de swietch tps, fps, fullscreen, pypal, iframe prevision aunque mejor dejarlo en codec, etc
+y la fonts en arial
+
+Desde aqui los elementos css son del proyecto mifarm,
+ luego vienen los del tuto 4 de tps de b4w oficial */
+ 
+ 
+body {
+ /*   background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Bitstream Vera Sans","Verdana",sans;
+    font-size: .9em;
+    margin: 0;
+    padding: 0;
+    overflow: hidden
+	*/
+	position: absolute;
+   overflow: hidden;
+   width: 100%;
+   height: 100%;
+	
+	overflow: hidden;   
+        margin: 0;
+        padding: 0;		
+	background: #000000; 
+	/*background-image: url(interface/title_bg.png);*/
+	background-size; ; auto auto;
+	background-repeat: no-repeat;
+		
+		
+		
+}
+
+
+/*comentamos body porque volvemos a dejar el style body en el html file sobre 
+todo  ante un mensaje al abrirlo en modo simulacion mobil que dice canvas excede el limite y
+ nomuestra nada*/
+
+/*div#canvas3d {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+*/
+/* ****************** este anterior es un  elemento css del  tuto 4 de tps
+ usado aqui porque lo hemos comentado el html donde estaba antes . Aqui podria reemplazarse por el main_canvas_container mejor***********/
+
+
+nav.navbar {
+visibility: hidden;			
+}
+a.navbar-brand 	{
+/*#nav-content {*/
+visibility: hidden;		
+}
+
+ 
+ 
+ /*hay que tocar el codigo .js renombramos a esta como principal a sustituir a canvas3d */
+div#main_canvas_container {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;  /*Se supone que hasta que meti main menu era 2 pero el main menu idioomas , calidad no eran accesibles ocn index a 2*/
+    width: 100%;
+    height: 100%
+}
+
+/*estos podrian hacer cambiar el cursor al pasar sobre algun elemento , en este caso sacado de webplayer.js 
+ proyecto cambia o garantiza verse el cursor especificado sobre main_canvas_container*/
+div#main_canvas_container.move {
+    cursor: move;
+}
+
+div#main_canvas_container.move * {
+    cursor: inherit !important;
+}
+
+
+
+
+
+div#control_circle{
+    position: absolute;
+    background-image: url(interface/controls_150_green.png);
+    width: 150px;
+    height: 150px;
+	 z-index: 1;
+    visibility:hidden;
+}
+
+div#control_tap{
+    position: absolute;
+    background-image: url(interface/tap_50.png);
+    width: 50px;
+    height: 50px;
+	 z-index: 1;
+    visibility:hidden;
+}
+
+
+div#control_giro_tap{
+    position: absolute;
+    background-image: url(interface/tap_50.png);
+    width: 50px;
+    height: 50px;
+	 z-index: 1;
+    visibility:hidden;
+}
+
+
+div#control_save_current_stat{
+    position: absolute;
+    right: 50px; bottom: 80%;
+    /*background-image: url(interface/save_stat.png);*/
+	 background-image: url(interface/save_current_stat.png);
+ /*   margin:0px 10px 30px 0px;*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+div#control_load_previ_stat{
+    position: absolute;
+    right: 117px; bottom: 80%;
+   /* background-image: url(interface/load_stat.png);*/
+    background-image: url(interface/load_previ_stat.png);
+   
+ /*   margin:0px 10px 30px 0px;*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+
+div#control_jump{
+    position: absolute;
+    right: 50px; bottom: 152px;
+    background-image: url(interface/jump_avatar.png);
+ /*   margin:0px 10px 30px 0px;*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+div#control_attack {
+    position: absolute;
+    right: 117px; bottom: 152px;
+    background-image: url(interface/attack_avatar.png);
+  /*  margin:0px 10px 30px 0px;  /*antes era 0 10 94 0*/
+  /*  width: 100px;
+    height: 96px;*/
+	  width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+	}
+div#control_view_FPS{
+    position: absolute;
+    right: 135px; bottom: 90px; /*background-image: url(interface/view_FPS_colorG.png);*/						
+	background-image: url(interface/fps_avatar.png);
+  /*  margin:0px 10px 30px 0px; /*era 0px 25px 190px 0px  . Antes 190 eran 160 pero asi se eleva sobre jump una distancia adecuada elevada para quedar a la derecha tps view*/
+    width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+}
+div#control_view_tps{
+    position: absolute;
+    right: 50px; bottom: 90px;
+   /* background-image: url(interface/view_tps_60_colorG.png);*/
+    background-image: url(interface/tps_avatar.png);
+  
+  /*  margin:0px 10px 30px 0px;/* antes era 0px 10px 194px 0px*/
+    width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+}
+
+div#control_view_restore{
+    position: absolute;
+    right: 220px; bottom: 90px;
+   /* background-image: url(interface/view_tps_60_colorG.png);*/
+    background-image: url(interface/tools/restoroe_view.png);  /*equivalente en pcs a pulsar 5 para recuperar la camera eye a saco*/
+  
+  /*  margin:0px 10px 30px 0px;/* antes era 0px 10px 194px 0px*/
+    width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+	cursor: pointer;
+}
+
+div#control_out_vehicle{
+    position: absolute;
+    right: 179px; bottom: 152px;  /*junto a los botones attack y jump*/
+   /* background-image: url(interface/view_tps_60_colorG.png);*/
+    background-image: url(interface/vehicle/out_vehicle.png);  /*equivalente en pcs a pulsar 5 para recuperar la camera eye a saco*/
+  
+  /*  margin:0px 10px 30px 0px;/* antes era 0px 10px 194px 0px*/
+    width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+	cursor: pointer;
+}
+
+
+
+
+div#control_main_menu{  /*ACTUAL EXTRA OPTIONS , tachado por no estar disponible actualmente o comentado.Creo este no se usa pero de usarse representaria un menu desplegable con opciones osea algo asi como rallas o simbolo flecha hacia abajo*/
+    position: absolute;
+    right: 50px; bottom: 60%;  /*antes era 100 y 100. Se desplaza mas a la izq porque lo necesita el tamaño dle boton o algo asi sino a saber porque*/
+   /* background-image: url(interface/view_tps_60_colorG.png);   Se supone hemos usado el mismo icono que para tps a falta de uno que le representeç
+      lo que nos podria liar si lo vemos y no hace la accion deseada*/
+    background-image: url(interface/extra_options_help.png);
+  
+   /* margin:0px 10px 30px 0px; /* antes era 0 10 256 y 0*/
+    width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+  /*  visibility:visible;*/
+}
+
+
+
+
+
+div#control_fly{  /*aparece sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 116px; bottom: 60%;
+    background-image: url(interface/fly_avatar.png);   /*No ha de tener imagen o si claro si ha de desplagar a otros se tendra que hacer click sobre tal*/
+   /* margin:0px 10px 30px 0px;  /*antes era 0 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+div#control_fly-up{  /*aparece como sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 237px; bottom: 60%;
+    background-image: url(interface/fly_avatar.png);
+   /* margin:0px 10px 30px 0px; /*0 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+div#control_fly-down{  /*aparece como sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 290px; bottom: 60%;
+    background-image: url(interface/fly_avatar.png);
+    /*margin:0px 10px 30px 0px; /*64 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+
+
+
+
+
+
+div#jump_help{   /*usados los controles help en interface modul*/
+    position: absolute;
+    right: 50px; bottom: 152px;
+    background-image: url(interface/jumpavatar_help.png);
+ /*   margin:0px 10px 30px 0px;*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+div#attack_help {
+    position: absolute;
+    right: 117px; bottom: 152px;
+    background-image: url(interface/attackavatar_help.png);
+  /*  margin:0px 10px 30px 0px;  /*antes era 0 10 94 0*/
+  /*  width: 100px;
+    height: 96px;*/
+	  width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+	}
+div#view_FPS_help{
+    position: absolute;
+    right: 135px; bottom: 90px; /*background-image: url(interface/view_FPS_colorG.png);*/						
+	background-image: url(interface/fpsavatar_help.png);
+  /*  margin:0px 10px 30px 0px; /*era 0px 25px 190px 0px  . Antes 190 eran 160 pero asi se eleva sobre jump una distancia adecuada elevada para quedar a la derecha tps view*/
+    width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+}
+div#view_tps_help{
+    position: absolute;
+    right: 50px; bottom: 90px;
+   /* background-image: url(interface/view_tps_60_colorG.png);*/
+    background-image: url(interface/tpsavatar_help.png);
+  
+  /*  margin:0px 10px 30px 0px;/* antes era 0px 10px 194px 0px*/
+    width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+}
+
+div#control_fly_help{  /*aparece sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 116px; bottom: 60%;
+    background-image: url(interface/flyavatar_help.png);   /*No ha de tener imagen o si claro si ha de desplagar a otros se tendra que hacer click sobre tal*/
+   /* margin:0px 10px 30px 0px;  /*antes era 0 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+div#control_fly_up_help{  /*aparece como sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 237px; bottom: 60%;
+    background-image: url(interface/flyavatar_help.png);
+   /* margin:0px 10px 30px 0px; /*0 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+div#control_fly_down_help{  /*aparece como sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 290px; bottom: 60%;
+    background-image: url(interface/flyavatar_help.png);
+    /*margin:0px 10px 30px 0px; /*64 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+
+div#control_main_menu_help{  /*creo este no se usa pero de usarse representaria un menu desplegable con opciones osea algo asi como rallas o simbolo flecha hacia abajo*/
+    position: absolute;
+    right: 50px; bottom: 60%;  /*antes era 100 y 100. Se desplaza mas a la izq porque lo necesita el tamaño dle boton o algo asi sino a saber porque*/
+   /* background-image: url(interface/view_tps_60_colorG.png);   Se supone hemos usado el mismo icono que para tps a falta de uno que le representeç
+      lo que nos podria liar si lo vemos y no hace la accion deseada*/
+    background-image: url(interface/extra_options_help.png);
+  
+   /* margin:0px 10px 30px 0px; /* antes era 0 10 256 y 0*/
+    width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden;
+  /*  visibility:visible;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*ej camera mov styles 
+desde aqui hemos incorporado estos botones para testing o mejora visual en un futuro que proviene del ej camera mov styles 
+todo los id y class usados son implementados por codigo javascript y no hacen falta aunque lo pueden hacer aparecer en el html file*/
+#controls_container_cms{  /* de camera mov style*/
+    position: absolute;
+    bottom: 120px;   /*las distancias a los btones desde la esquina inferior derecha son 30 y 30 ahora aqui son 320 para ir encima los botones previos view, jump y attack*/
+					/*provisionalmente mientras buscamos ajustarlos a dispositivos mobiles dejamos a 120 sino ni en pc se ve open optionsla primera por arriba*/
+    right: 60px; //antes era 30
+	z-index: 2;
+}                 /*cada boton comparte la class bon*/
+    #controls_container_cms .button_container {  /*separacion entre los botones delmargen derecho donde estan las camaras a seleccionar y el resert boton*/
+        height: 20px;
+        margin-bottom: 5px;
+    }
+    #controls_container_cms label {
+        cursor: pointer;   /*para que cambie a la mano cuando estemos sobre ellos o el label de los mismos, son  etiqueta dentro de div bajo el div princial controls_container*/
+    }
+
+/*todo los id y class usados son implementados por codigo javascript y no hacen falta aunque lo pueden hacer aparecer en el html file*/
+#controls_container_cms2{  /* de camera mov style*/
+    position: absolute;
+    bottom: 10px;   /*las distancias a los btones desde la esquina inferior derecha son 30 y 30 ahora aqui son 320 para ir encima los botones previos view, jump y attack*/
+    right: 30px;
+	z-index: 2;
+}                 /*cada boton comparte la class bon*/
+    #controls_container_cms2 .button_container {  /*separacion entre los botones delmargen derecho donde estan las camaras a seleccionar y el resert boton*/
+        height: auto;
+        margin-bottom: 15px;
+    }
+    #controls_container_cms2 label {
+        cursor: pointer;   /*para que cambie a la mano cuando estemos sobre ellos o el label de los mismos, son  etiqueta dentro de div bajo el div princial controls_container*/
+    }
+
+
+div#life_bar {
+/*	visibility: hidden;  la puse yo esta linea, par ya mostrar en interface fuera de cualquier opcion game_menu , replay ,etc y ocultamos de nuevo en los preloader ej load_level */
+ 
+    position: absolute;
+/*    left: 200px; top: 0px;  /*este 200 hace que podamos ver la points acumulado a su izq por defecto .
+	Finalmente al dejar game_menu_calling en centro top, left pasa a 0 en vez de 200px*/ 
+    /*left: 0px; top: 0px;*/
+	left: 6%; top: 0px;
+    width: 256px;
+    height: 40px;
+	 float: right;
+	  z-index: 2;
+}
+
+div#life_bar_main {
+   position: absolute;
+    left: 0px; top: 0px;	
+    width: 256px;
+    height: 40px;
+    background-image: url(interface/life_bar_main_tree_blue.png);
+}
+
+div#life_bar_green {
+    position: absolute;
+    left: 19px; top: 15px;
+    background-image: url(interface/life_bar_green.png);
+    width: 192px;
+    height: 10px;
+}
+
+div#life_bar_red {
+    position: absolute;
+    right: 45px; top: 15px;
+    background-image: url(interface/life_bar_red.png);
+    width: 0px;
+    height: 10px;
+}
+
+div#life_bar_mid {
+    position: absolute;
+    left: 211px; top: 10px;
+    background-image: url(interface/life_bar_mid.png);
+    width: 4px;
+    height: 20px;
+}
+
+
+
+
+
+/*TRAS EL BODY */
+
+div#bg_img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+   /* background-color: #000*/
+}
+
+div#bg_img_sec {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    background-size: cover;
+    /*background-color: #000*/
+}
+
+
+/* ANTES DE LOS TPS*/
+div#start_dialog {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;   /*queda algo pasado del centro hacia la derecha  pero ya no se solapa*/
+    top: 0;
+    width: 333px;
+    height: 80px;
+    background-image: url(icons/mouselock.png) no-repeat;
+    z-index: 0;   /*estaba a 2 pero lo debido cambiar a 0 porque inica ya activado el mouselook y esto entorpece durante la carga*/
+    color: #fff;
+    font-size: 16px;
+    line-height: 125%;
+    font-family: Open Sans;
+    padding-top: 18px;
+    padding-left: 53px
+	 
+}
+
+div#start_dialog_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0
+}
+
+div#fps_container {
+    width: 80px;
+    height: 30px;
+    background-image: url(icons/fps.png);
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-family: Open Sans Semibold;
+    z-index: 2;
+    opacity: 1;
+	 
+}
+
+/*
+div#info_container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 2
+}
+*/
+div#controls_container_fps {
+    box-sizing: border-box;
+    width: 536px;
+    height: 100px;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    position: absolute;
+    background-image: url(icons/control.png);
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 16px;
+    line-height: 125%;
+    font-family: Open Sans;
+    padding-top: 18px;
+    padding-left: 53px
+	
+	
+}
+
+div#drive_control_container {
+    box-sizing: border-box;
+    width: 536px;
+    height: 100px;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    position: absolute;
+    background-image: url(icons/drive_control.png);
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 16px;
+    line-height: 125%;
+    font-family: Open Sans;
+    padding-top: 18px;
+    padding-left: 53px
+	 
+}
+
+/*
+p {
+    margin: 0;
+    padding: 0
+}
+
+*/
+div#near_obj_info_container {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    width: 170px;
+    height: 108px;
+    font-size: 16px;
+    line-height: 125%;
+    font-family: Open Sans;
+    text-align: center;
+    padding-top: 85px;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin-left: -85px;
+    margin-top: -54px
+}
+
+div#throw_obj_container {  /*va a mostrar texto , luego el boton se mostrarraa en los 53px del padding left que afecta a eso*/
+	visibility: hidden;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 200px;
+    height: 80px;
+   /* background-image: url(icons/mouselock.png);*/
+    background-image: url(interface/throw_objects.png);
+	background-repeat: no-repeat;
+   z-index: 0;
+    color: #fff;
+    font-size: 16px;
+    line-height: 125%;
+    font-family: Open Sans;
+    padding-top: 30px;
+    padding-left: 53px;
+	/*para dejarle un fondo al texto semitransparente*/
+	border-radius: 12px;
+   background-color: rgba(27, 84, 86, 0.5);
+	 
+}
+
+body[lang="en"] div#throw_obj_container div[lang="es"] {
+    display: none;
+}
+
+body[lang="es"] div#throw_obj_container div[lang="en"] {
+    display: none;
+}
+
+
+
+div#pl_cont {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0
+}
+
+div#pl_frame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 499px;
+    height: 72px;
+    margin-left: -300px;
+    margin-top: -36px;
+    opacity: 0
+}
+
+div#pl_bar {
+    position: relative;
+    float: left;
+    background-image: url(icons/preloader_caption.png);
+    background-repeat: repeat-x;
+    top: 31px;
+    height: 30px;
+    max-width: 314px
+	 
+}
+
+div#preloader_left {
+    position: relative;
+    float: left;
+    background-image: url(icons/left_caption.png);
+    background-repeat: no-repeat;
+    left: 0;
+    width: 5px;
+    top: 31px;
+    height: 30px
+	
+	
+}
+
+div#preloader_right {
+    position: absolute;
+    background-image: url(icons/right_caption.png);
+    background-repeat: no-repeat;
+    right: -111px;
+    width: 116px;
+    top: -19px;
+    height: 110px
+	
+	
+}
+
+div#tractor_icon {
+    position: relative;
+    float: left;
+    background-image: url(icons/tractor.png);
+    background-repeat: no-repeat;
+    width: 175px;
+    height: 72px;
+}
+
+div.fill_container {
+    width: 314px;
+    position: absolute;
+    left: 180px;
+    height: 30px;
+    top: 31px;
+    float: right
+}
+
+div#pl_fill {
+    background-color: #fff;
+    height: 30px;
+    width: 100%;
+    float: right
+}
+
+div#pl_caption {
+    position: absolute;
+    top: 36px;
+    width: 70px;
+    height: 20px;
+    left: -10px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    font-family: Open Sans Ultra Bold;
+    line-height: 105%
+}
+
+.grab_letter {
+    color: #fff
+}
+
+/*picket_object_al_mobil()*/
+.pick_element {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 77px;
+    height: 77px;
+    display: none;
+    z-index: 1;
+    background-image: url(icons/hand.svg) no-repeat
+	 
+}
+
+
+
+.main_points_container {
+  position: absolute;
+  /*left: 20px;*/
+  right: 15%;
+  top: 20px;
+  z-index: 2;
+}
+/* es el que continee el  _value_name y y  name_label */
+.points_container {
+  margin-bottom: 8px;
+  height: 30px;
+}
+
+.points_container:last-child {
+  margin-bottom: 0;
+}
+
+.points_container:before,
+.points_container:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+a.text,
+a.inv_text,
+label.text {  /*creo se repite como .text_lavel, probar a variar algo aqui a ver si le hace caso*/
+    /* background-color: black; */
+    color: white;/*el texto blanco para el fondo gris, ahora semi azul transperente*/
+    text-decoration: none;
+    display: block;
+    width: 170px;
+    height: 26px;
+    border: 2px solid white;
+    text-align: center;
+    font-family: Arial;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 1);/*el texto blanco para el fondo gris, ahora semi azul transperente*/
+    font-size: 15px;
+    line-height: 25px;
+}
+/*hasta aqui ej camera mov styles */
+
+
+.text_label {
+  background-color: rgba(23, 84, 86, .5);/* #323232; remplazamos gris oscuro  por azul del resto de botones semitransparnte*/
+  border: 2px solid rgba(98, 98, 98, .2);
+  border-radius: 8px;  /*estaba a 2 y a 18 redondea demasiado los bordes del boton que a 2 eran practicamente cuadrados*/
+  width: 120px;
+  height: 30px;
+  display: block;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;  /*estaba a normal pero necesitamos resalte en lugar de agrandar la fuente */
+  color: #fff;  /*el texto blanco para el fondo gris, ahora semi azul transperente*/
+  /*cursor: pointer;*/
+  text-decoration: none;
+  text-align: center;
+  line-height: 28px;
+  margin-bottom: 4px;
+  box-shadow: 0px 0px 4px 0px rgba(98, 98, 98, .8); /*era 98,98,98 es un color gris oscuro de fondo del cajetin , que mejor dejarlo del azul semitransparente de los nuevos botones*/
+  /*27,84,86 es tal azul*/
+}
+
+.value_label {
+  background-color: rgba(23, 84, 86, .5);/* #323232; remplazamos gris oscuro  por azul del resto de botones semitransparnte*/
+  border: 2px solid rgba(98, 98, 98, .2);
+  border-radius: 8px;  /*estaba a 2 y a 18 redondea demasiado los bordes del boton que a 2 eran practicamente cuadrados*/
+  width: 50px;
+  height: 30px;
+  display: block;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  /*cursor: pointer;*/
+  text-decoration: none;
+  text-align: center;
+  line-height: 28px;
+  margin-bottom: 4px;
+  box-shadow: 0px 0px 4px 0px rgba(98, 98, 98, .8);
+}
+
+
+
+@media (max-width: 460px) {   /*la proxima vez pon que dispositivo es este si el redmi el huawei*/
+	.points_container {
+    height: auto;
+    margin-bottom: 16px;
+  }
+  .text_label {
+    float: none;
+  }
+	
+
+  
+}
+
+@media (max-height: 420px) {
+
+div#life_bar {
+	left: 1%;
+}
+.main_points_container {
+   right: 2%;
+}
+ 
+  /*
+  div#control_fly{  aparece sub subelmenentos al pulsar c o en mobil clickar boton
+    position: absolute;
+    left: 0px; bottom: 64px;
+    background-image: url(interface/jump_60_colorG.png);
+    margin:0px 10px 25px 0px;   para probarlo en un 640-360 de galaxy s5 mejor 25 que 280 porque sino estamos fuera
+	pantalla ahora no descarto moverlo a otra posicion que el control de movimiento enel mobil situado a ese lado no intefiera*/
+
+}
+}
+
+
+
+
+
+.cc-window {
+    opacity: 1;
+    transition: opacity 1s ease
+}
+.cc-window.cc-invisible { opacity: 0 }
+.cc-animate.cc-revoke { transition: transform 1s ease }
+.cc-animate.cc-revoke.cc-top { transform: translateY(-2em) }
+.cc-animate.cc-revoke.cc-bottom { transform: translateY(2em) }
+.cc-animate.cc-revoke.cc-active.cc-bottom, .cc-animate.cc-revoke.cc-active.cc-top, .cc-revoke:hover { transform: translateY(0) }
+.cc-grower {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s
+}
+.cc-color-override--1680425298.cc-window {
+    background-color: rgba(95, 132, 132, 0.8)!important;   /*originalemnte era rgba(0,0,0,0.8)  que lo dejaba solo trasparente, yo le di un tono verdos de mi interfaz*/
+    color: #fff;
+}
+.cc-banner.cc-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.cc-revoke, .cc-window {
+	/* background-image: url(interface/btn_back_green.png);*/
+	 /* background: no-repeat center center fixed;   esto le hace desaparece a imagen boton*/
+/*	 background-repeat: no-repeat;
+    background-position-x: center;*/
+	/* -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);*/
+     box-sizing: border-box;
+    font-family: Arial,sans-serif;  /*antes arial era "Roboto" y entre comillas dobles pero mejor dejar acorde todo a misma fuente*/
+    font-size: 20px; /*originalmente era 12 pero en mobiles ni se ve*/
+    line-height: 1.5em;
+    overflow: hidden;
+    padding: 1em 0.3em;
+    position: fixed;
+	
+    text-align: center;
+    z-index: 9999;
+}
+
+.cc-compliance  {
+	position: releative;
+	overflow: hidden;
+	
+}
+
+.cc-compliance:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 25%;
+  left: 0%;
+  z-index: -1;  /*para garantizar que queda tras el boton ACEPTAR O ELEMENTO*/
+ /* background: url(interface/btn_back_green.png) 0 0 no-repeat;*/
+   background-image: url(interface/btn_back_green.png);
+  /* background-repeat: no-repeat;*/
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+
+
+.cc-color-override--1680425298 .cc-link, .cc-color-override--1680425298 .cc-link:active, .cc-color-override--1680425298 .cc-link:visited {
+    color: #fff;
+}
+.cc-link, .cc-revoke:hover {
+    text-decoration: underline;
+}
+.cc-btn {
+   /*background-color: #ffffff;*/
+   /*background-color #000000;*/
+   background-color: rgba(0, 0, 0, 0.8);
+    border-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    color: #000;
+    display: block;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin: 10px auto 0;
+    max-width: 5em;
+    padding: 0.4em 0.7em;
+    text-align: center;
+    white-space: nowrap;
+}
+.cc-btn, .cc-close, .cc-link, .cc-revoke {
+    cursor: pointer;
+}	
+	
+	
+	
+	
+	
+
+
+#cookie_cont {
+		    display:none;
+		    position: fixed;
+		    bottom: 0px;
+		    left: 0px;
+		    width: 100%;
+		    z-index: 999999;
+		   /* display: block;  ahora lo chequeamos y eso ya se ocupa de darle vista sino fue aceptado previametne*/
+			height: 35%;  /*creo que con esto solventamos de forma generica el que no se pueda dar al boton aceptar al no mostrarse en huwaei*/
+			
+			 
+			  background-color: rgba(95, 132, 132, 0.8)!important; 
+			 
+		}
+#cookie {
+		    margin: auto;
+		    position: relative;
+		    top: 0px;
+		    height: 58px;
+		    width: 100%;
+		    text-align:center;
+		  /*  background-color: #eeeeee; ya lo pone cookie_cont*/
+		}
+#cookie p {
+		 word-wrap: break-word;
+		    /*line-height:58px; esta claro que si saltas con ej el break es toda esa altura vaya tela mejor a default sin declararla
+		    font-size:12px;*/
+		    text-align:center;
+			 box-sizing: border-box;
+			 
+    font-family: Arial,sans-serif;  /*antes arial era "Roboto" y entre comillas dobles pero mejor dejar acorde todo a misma fuente*/
+    font-size: 12px; /*originalmente era 12 pero en mobiles ni se ve   , vamos a necesitar usar las media queri*/
+    line-height: 1.5em;
+    overflow: hidden;
+    /*padding: 1em 0.3em;*/
+    position: fixed;
+	 color: #fff;  /*color del texto blanco*/
+			
+			
+			
+			
+		}
+#cookie p a {
+		    margin-right:5px;
+		    text-decoration: underline;
+		}
+	
+	
+	
+
+
+@media (max-height: 768px) and (min-width: 854px) {  /*altura max en mi desktop y parto de la max anchura del huaweig730 de 853. finalmente la text_content.html esta enre 853x445*/
+
+
+
+
+}
+
+
+@media (max-height: 480px) and (max-width: 853px) {  /*altura max en mi desktop y parto de la anchura del huaweig730. finalmente la text_content.html alcanza el maximo a 853x445
+                                        para el redmi que nos afecta aqui , es de 480 e nlugar de 445 de huawei luego en total comprende desde 360 en lugar del huwaew a 335*/
+
+										
+#cookie p {										
+/*font-size: 24px;	 por algun motivo es 14 porque vuelve a ser la media query para hwaey que misterio hace que sea asi y el resto media para que estasino  a esta medida de 24 es tan grande el texto que no se observa el aceptar. Joder es que dejarlo unos dias por curro no informatico te enfria, es que redmi ha de ser font menor tamaño de 24 por narices creo yo ahora*/
+  font-size: 14px;
+  }
+
+}
+
+
+
+
+@media (min-height: 336px) and (min-width: 641px) {  /*altura max en mi desktop y parto de la anchura del huaweig730. finalmente la text_content.html esta enre 853x445*/
+													/*creo que el huwaei g730 deberia estar aqui entre ambos tag start_cont de pagina inicio y el de text content medidas del 100x100*/
+													
+#cookie p {													
+font-size: 20px;
+  }
+}
+
+@media (max-width: 640px) and  (max-height: 335px)   {	/*la anterior de la tool con una serie de layouts predeterminados era 480x320 en landscape ahora dejamos medidas huaweig730*/
+														/*en pagina text_content.html muestra el tag start_cont 853x445*/	
+														/*en una segunda toma el redmi tiene ni mas ni menos uqe un poco mas de altura 360 en tag start_cont de pagina principal
+														y en text_content pagina de   */
+#cookie p {
+font-size: 15px;	
+}
+
+														
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+{
+    "buttons_info": [
+        {
+            "button_name": "main_menu*level_01_button",
+            "level_name": "level01",
+            "mouse_over_speaker": "main_menu*Speaker",
+			"is_char_htoh": false
+        },
+        {
+            "button_name": "main_menu*level_02_button",
+            "level_name": "level02",
+			"mouse_over_speaker": "main_menu*Speaker",
+			"is_char_htoh": false
+        },      
+        {
+            "button_name": "main_menu*underconstruction_button",
+            "level_name": "under construction",
+			"mouse_over_speaker": "main_menu*Speaker",
+			"is_char_htoh": false
+        }
+		,      
+        {
+            "button_name": "main_menu*intro",
+            "level_name": "introduction",
+			"mouse_over_speaker": "main_menu*Speaker",
+			"is_char_htoh": false
+        }
+		
+    ],
+
+   
+
+    "camera_rotation_fac": 0.1,
+	
+	"camera_pivot": [-1.9, -20, 1.7]
+}

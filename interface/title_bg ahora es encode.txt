@@ -1,0 +1,1 @@
+porque daba errores en recargas quizas algo relacioando con el manifest file

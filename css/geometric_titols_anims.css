@@ -1,0 +1,630 @@
+/* Animation properties */
+
+
+.p_n-dimensiones {
+  animation: presentation_anim 7s ease-out infinite running;  /*recuerdo por las  de codepen animaciones css que wars es el nombre usado en keyframes media query*/
+
+}
+
+
+@keyframes presentation_anim {  /*a diferencia de las primeras anims css tiene 4 fases, pero solo lo entendimos cuando suprimimos probando la 4 fase,
+							la primera no haria  nada pero si es la que
+								va no la que llega al giro z de 60 , la segunda  parte de tal para volver no seria clavadamente la posicio nfinal de tal giro
+                              y la tercera parte de tal hasta volver a 0 grados								*/
+  0% {
+    opacity: 0;
+  /*  transform: scale(1) translateY(0.5em);  este valor  de 8px controla que se vaya desde arriba hacia abajo o centro
+									cualquier incremento ej 10em hace que el letero aparezca desde abajo hacia arriba o centro */
+									
+  -webkit-transform:scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0);
+            transform: scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0); 			/*la explicacion anterior es al tener el traslate parte de 8px en el ej y por eso se dirige hacia el centro	 pero porque se va encogiendo con el scale*/						
+  }
+  20% {   /*la animacion parte de 0 visibilidad y va incrementado hasta 1 y girando habiendo partido de horizontal qeu se supone es como se ha creado*/
+    opacity: 1;
+	transform: rotateZ(60deg);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(0.5);  /*si a 0% partimos de 1 en lugar de 1.5 de scale no vemos aparecer el titulo mas que al 90% cuando se va a toda leche hacia un lado*/
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(0.1) rotateZ(-60deg); /*translateZ(-1000em) rotateZ(-60deg);  era mayor de -1000 y a -1000 ya se iba muy ligero  mejor jugar con opacidad y scale*/
+  }
+}
+
+/* General styles and layout 
+body {
+  /*background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+}
+*/
+.presentation_game0 {
+	
+  perspective: 800px;  /* Make the 3D work on the container , la animacion de los aros tenia 10mil en lugar de 800*/
+  transform-style: preserve3d;
+	
+  height: 17em;  /*17x16 son 272px que es lo que mide su .svg altura, bueno realmente son 360 de ancho y 80 de alto luego se estara supongo scalando*/
+  position: absolute;
+  /*
+  top: calc(70% - 85px);
+  left: calc(15% - 85px);*/
+  left: 20%;  
+  top: 1%;
+  transform: translate(-50%, -50%);  /*a 0 0 sale desde abajo el letrero,  a -50, 0 sale de arriba, lo que realmente controla es qu ese centre o ponga a un lado*/
+  width: 34em;  /*544px   de 34x16   al reducirlo a 3 son 3x16 =48px*/
+}
+
+
+img .p_n-dimensiones {  /*sin pasar la clase afectaria al copyrigth*/
+position: absolute;
+  width: 100%;  /*recuerda es relativo al parent*/
+  /* bottom: -0.5em;   1em son 16px y relativos a fonts  podia ser top o bottom esta medida sin diferencia creo, ves las medias condiciones confirman su relacion con fonts*/
+  /*top: 0.5em;*/
+}
+
+/*** Media queries for adjusting to different screen sizes ***/
+@media (min-width: 480px) and (max-width: 640px) {  /*es la del huaei730g anchura maxiam 640 y altura 390 cunado fisica son rondando 900x500*/
+/*@media only screen and (max-width: 600px) {*/
+  .presentation_game0 {
+    font-size: 10px;
+	
+	 height: 60em; 	/*17x16 son 272px  a  17 queda muy por debajo del centro no visualizandose correctametne 
+					y 60em son ni mas ni menos que 960 que para huawei730g  queda por encima del centro pero
+					porque estamos hablando de scalado de tal enorme height que se necesita en estos mobiles viejos*/
+ 
+  top: 0%;
+	
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .presentation_game0 {
+    font-size: 7px;
+	
+  left: 20%;  
+  top: 0%;
+  }
+  
+  
+  
+}
+
+
+
+
+
+.p_entertainment {
+  animation: entertainment_anim 7s ease-out infinite running;  /*recuerdo por las  de codepen animaciones css que wars es el nombre usado en keyframes media query*/
+}
+
+
+@keyframes entertainment_anim {  /*a diferencia de las primeras anims css tiene 4 fases, pero solo lo entendimos cuando suprimimos probando la 4 fase,
+							la primera no haria  nada pero si es la que
+								va no la que llega al giro z de 60 , la segunda  parte de tal para volver no seria clavadamente la posicio nfinal de tal giro
+                              y la tercera parte de tal hasta volver a 0 grados								*/
+  0% {
+    opacity: 0;
+  /*  transform: scale(1) translateY(0.5em);  este valor  de 8px controla que se vaya desde arriba hacia abajo o centro
+									cualquier incremento ej 10em hace que el letero aparezca desde abajo hacia arriba o centro */
+									
+  -webkit-transform:scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0);
+            transform: scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0); 			/*la explicacion anterior es al tener el traslate parte de 8px en el ej y por eso se dirige hacia el centro	 pero porque se va encogiendo con el scale*/						
+  }
+  20% {   /*la animacion parte de 0 visibilidad y va incrementado hasta 1 y girando habiendo partido de horizontal qeu se supone es como se ha creado*/
+    opacity: 1;
+	transform: rotateZ(-60deg);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(0.5);  /*si a 0% partimos de 1 en lugar de 1.5 de scale no vemos aparecer el titulo mas que al 90% cuando se va a toda leche hacia un lado*/
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(0.1) rotateZ(60deg); /*translateZ(-1000em) rotateZ(-60deg);  era mayor de -1000 y a -1000 ya se iba muy ligero  mejor jugar con opacidad y scale*/
+  }
+}
+
+/* General styles and layout 
+body {
+  /*background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+}
+*/
+.presentation_game1 {
+	
+  perspective: 800px;  /* Make the 3D work on the container , la animacion de los aros tenia 10mil en lugar de 800*/
+  transform-style: preserve3d;
+	
+  height: 17em;  /*17x16 son 272px que es lo que mide su .svg altura, bueno realmente son 360 de ancho y 80 de alto luego se estara supongo scalando*/
+  position: absolute;
+  /*
+  top: calc(70% - 85px);
+  left: calc(15% - 85px);*/
+  left: 20%;  
+  top: 1%;
+  transform: translate(-50%, -50%);  /*a 0 0 sale desde abajo el letrero,  a -50, 0 sale de arriba, lo que realmente controla es qu ese centre o ponga a un lado*/
+  width: 34em;  /*544px   de 34x16   al reducirlo a 3 son 3x16 =48px*/
+}
+
+
+img .p_entertainment {  /*sin pasar la clase afectaria al copyrigth*/
+position: absolute;
+  width: 100%;  /*recuerda es relativo al parent*/
+  /* bottom: -0.5em;   1em son 16px y relativos a fonts  podia ser top o bottom esta medida sin diferencia creo, ves las medias condiciones confirman su relacion con fonts*/
+  /*top: 0.5em;*/
+}
+
+/*** Media queries for adjusting to different screen sizes ***/
+@media (min-width: 480px) and (max-width: 640px) {  /*es la del huaei730g anchura maxiam 640 y altura 390 cunado fisica son rondando 900x500*/
+/*@media only screen and (max-width: 600px) {*/
+  .presentation_game1 {
+    font-size: 10px;
+	
+	 height: 60em; 	/*17x16 son 272px  a  17 queda muy por debajo del centro no visualizandose correctametne 
+					y 60em son ni mas ni menos que 960 que para huawei730g  queda por encima del centro pero
+					porque estamos hablando de scalado de tal enorme height que se necesita en estos mobiles viejos*/
+ 
+  top: 0%;
+	
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .presentation_game1 {
+    font-size: 7px;
+	
+  left: 20%;  
+  top: 0%;
+  }
+  
+  
+  
+}
+
+
+
+
+/*************************************************************a qui otra pareja de titulos presenta y la ciudad perdida***************************************************/
+
+
+
+/* Animation properties */
+
+.p_presents_game {
+  animation: presents_game_anim 7s ease-out infinite running;  /*recuerdo por las  de codepen animaciones css que wars es el nombre usado en keyframes media query*/
+}
+
+
+@keyframes presents_game_anim {  /*a diferencia de las primeras anims css tiene 4 fases, pero solo lo entendimos cuando suprimimos probando la 4 fase,
+							la primera no haria  nada pero si es la que
+								va no la que llega al giro z de 60 , la segunda  parte de tal para volver no seria clavadamente la posicio nfinal de tal giro
+                              y la tercera parte de tal hasta volver a 0 grados								*/
+  0% {
+    opacity: 0;
+  /*  transform: scale(1) translateY(0.5em);  este valor  de 8px controla que se vaya desde arriba hacia abajo o centro
+									cualquier incremento ej 10em hace que el letero aparezca desde abajo hacia arriba o centro */
+									
+  -webkit-transform:scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0);
+            transform: scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0); 			/*la explicacion anterior es al tener el traslate parte de 8px en el ej y por eso se dirige hacia el centro	 pero porque se va encogiendo con el scale*/						
+  }
+  20% {   /*la animacion parte de 0 visibilidad y va incrementado hasta 1 y girando habiendo partido de horizontal qeu se supone es como se ha creado*/
+    opacity: 1;
+	transform: rotateZ(60deg);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(0.5);  /*si a 0% partimos de 1 en lugar de 1.5 de scale no vemos aparecer el titulo mas que al 90% cuando se va a toda leche hacia un lado*/
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(0.1) rotateZ(-60deg); /*translateZ(-1000em) rotateZ(-60deg);  era mayor de -1000 y a -1000 ya se iba muy ligero  mejor jugar con opacidad y scale*/
+  }
+}
+
+/* General styles and layout 
+body {
+  /*background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+}
+*/
+.presentation_game2 {
+	
+  perspective: 800px;  /* Make the 3D work on the container , la animacion de los aros tenia 10mil en lugar de 800*/
+  transform-style: preserve3d;
+	
+  height: 17em;  /*17x16 son 272px que es lo que mide su .svg altura, bueno realmente son 360 de ancho y 80 de alto luego se estara supongo scalando*/
+  position: absolute;
+  /*
+  top: calc(70% - 85px);
+  left: calc(15% - 85px);*/
+  left: 30%;  
+  top: 1%;
+  transform: translate(50%, -50%);  /*a 0 0 sale desde abajo el letrero,  a -50, 0 sale de arriba, lo que realmente controla es qu ese centre o ponga a un lado*/
+  width: 34em;  /*544px   de 34x16   al reducirlo a 3 son 3x16 =48px*/
+}
+
+
+img .p_presents_game {  /*sin pasar la clase afectaria al copyrigth*/
+position: absolute;
+  width: 100%;  /*recuerda es relativo al parent*/
+  /* bottom: -0.5em;   1em son 16px y relativos a fonts  podia ser top o bottom esta medida sin diferencia creo, ves las medias condiciones confirman su relacion con fonts*/
+  /*top: 0.5em;*/
+}
+
+/*** Media queries for adjusting to different screen sizes ***/
+@media (min-width: 480px) and (max-width: 640px) {  /*es la del huaei730g anchura maxiam 640 y altura 390 cunado fisica son rondando 900x500*/
+/*@media only screen and (max-width: 600px) {*/
+  .presentation_game2 {
+    font-size: 10px;
+	
+	 height: 60em; 	/*17x16 son 272px  a  17 queda muy por debajo del centro no visualizandose correctametne 
+					y 60em son ni mas ni menos que 960 que para huawei730g  queda por encima del centro pero
+					porque estamos hablando de scalado de tal enorme height que se necesita en estos mobiles viejos*/
+ transform: translate(30%, -30%); 
+  top: 0%;
+	
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .presentation_game2 {
+    font-size: 7px;
+	
+  transform: translate(30%, -30%); 
+  left: 20%;  
+  top: 0%;
+  }
+  
+  
+  
+}
+
+
+
+
+
+.p_the_lost_city {
+  animation: the_lost_city_anim 7s ease-out infinite running;  /*recuerdo por las  de codepen animaciones css que wars es el nombre usado en keyframes media query*/
+}
+
+
+@keyframes the_lost_city_anim {  /*a diferencia de las primeras anims css tiene 4 fases, pero solo lo entendimos cuando suprimimos probando la 4 fase,
+							la primera no haria  nada pero si es la que
+								va no la que llega al giro z de 60 , la segunda  parte de tal para volver no seria clavadamente la posicio nfinal de tal giro
+                              y la tercera parte de tal hasta volver a 0 grados								*/
+  0% {
+    opacity: 0;
+  /*  transform: scale(1) translateY(0.5em);  este valor  de 8px controla que se vaya desde arriba hacia abajo o centro
+									cualquier incremento ej 10em hace que el letero aparezca desde abajo hacia arriba o centro */
+									
+  -webkit-transform:scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0);
+            transform: scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0); 			/*la explicacion anterior es al tener el traslate parte de 8px en el ej y por eso se dirige hacia el centro	 pero porque se va encogiendo con el scale*/						
+  }
+  20% {   /*la animacion parte de 0 visibilidad y va incrementado hasta 1 y girando habiendo partido de horizontal qeu se supone es como se ha creado*/
+    opacity: 1;
+	transform: rotateZ(-60deg);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(0.5);  /*si a 0% partimos de 1 en lugar de 1.5 de scale no vemos aparecer el titulo mas que al 90% cuando se va a toda leche hacia un lado*/
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(0.1) rotateZ(60deg); /*translateZ(-1000em) rotateZ(-60deg);  era mayor de -1000 y a -1000 ya se iba muy ligero  mejor jugar con opacidad y scale*/
+  }
+}
+
+/* General styles and layout 
+body {
+  /*background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+}
+*/
+.presentation_game3 {
+	
+  perspective: 800px;  /* Make the 3D work on the container , la animacion de los aros tenia 10mil en lugar de 800*/
+  transform-style: preserve3d;
+	
+  height: 17em;  /*17x16 son 272px que es lo que mide su .svg altura, bueno realmente son 360 de ancho y 80 de alto luego se estara supongo scalando*/
+  position: absolute;
+  /*
+  top: calc(70% - 85px);
+  left: calc(15% - 85px);*/
+  left: 30%;  /*deja al pasar de 20 a 10% un hoja con sus bordes derecho desplazado haica izq sino esta tocaria o se hunde en la derechca dejanod titols medio ocultos*/
+  top: 1%;
+  transform: translate(50%, -10%);  /*a 0 0 sale desde abajo el letrero,  a -50, 0 sale de arriba, lo que realmente controla es qu ese centre o ponga a un lado*/
+  width: 34em;  /*544px   de 34x16   al reducirlo a 3 son 3x16 =48px*/
+}
+
+
+img .p_the_lost_city {  /*sin pasar la clase afectaria al copyrigth*/
+position: absolute;
+  width: 100%;  /*recuerda es relativo al parent*/
+  /* bottom: -0.5em;   1em son 16px y relativos a fonts  podia ser top o bottom esta medida sin diferencia creo, ves las medias condiciones confirman su relacion con fonts*/
+  /*top: 0.5em;*/
+}
+
+/*** Media queries for adjusting to different screen sizes ***/
+@media (min-width: 480px) and (max-width: 640px) {  /*es la del huaei730g anchura maxiam 640 y altura 390 cunado fisica son rondando 900x500*/
+/*@media only screen and (max-width: 600px) {*/
+  .presentation_game3 {
+    font-size: 10px;
+	
+	 height: 60em; 	/*17x16 son 272px  a  17 queda muy por debajo del centro no visualizandose correctametne 
+					y 60em son ni mas ni menos que 960 que para huawei730g  queda por encima del centro pero
+					porque estamos hablando de scalado de tal enorme height que se necesita en estos mobiles viejos*/
+  transform: translate(30%, -10%); 				
+  left: 0%; 
+  top: -20%;
+	
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .presentation_game3 {
+    font-size: 7px;
+	
+  transform: translate(30%, -10%); 
+  left: 30%;  
+  top: -20%;
+  }
+  
+  
+  
+}
+
+
+
+/*************************************  aqui las figuras geometricas originales de primeras css animaciones***************************************************************/
+
+
+
+
+
+
+
+
+.codepen {   /*esta claro que es el aro o uno de los dos que he usado finalmente*/
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 10px solid blue;
+  position: absolute;
+  top: calc(70% - 85px);
+  left: calc(15% - 85px);
+  transform-style: preserve-3d;
+  perspective: 10000px;
+  /*transform: rotateY(91deg);*/
+  animation: rotate 5s infinite linear;
+  
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #45e8ff, inset 0 0 10px #45e8ff;
+  
+}
+ .codepen .cube {           /*este es lo que afectaria ej al cubo aunque el aro arrastra a su hhijo cube con ej animacon*/
+    transform-style: preserve-3d;
+    perspective: 10000px;
+    position: absolute;
+    top: calc(70% - 25px);  /*si el cubo quedaba algo abajo del centro del aro esto de 5 a 25px queda justo en centro*/
+    left: calc(15% - 25px);
+    transform: translateZ(40px) rotateX(-45deg) rotateY(45deg);
+    animation: rotate2 5s infinite linear;
+	
+	
+ }	
+  .codepen .cube .face {
+      position: absolute;
+      width: 60px;
+      height: 50px;
+      border: 5px solid red;
+	  
+	  box-sizing: border-box;
+     box-shadow: 0 0 10px #45e8ff, inset 0 0 10px #45e8ff; 
+   
+	/*@for $i from 1 through 4 {
+        &:nth-child(#{$i}){
+          transform: rotateY($i*90deg) translateZ(35px);
+        }
+      }*/
+  }                              /*cambiar de rotate X a Y en las caras  1 aa 4 ajusta a que se renderizen sus caras correctamente*/
+  .codepen .cube .face:nth-child(1){transform: rotateY(90deg) translateZ(35px);}  /*antes habia un & en lugar de .codepen .cube .face*/
+  .codepen .cube .face:nth-child(2){transform: rotateY(180deg) translateZ(35px);}
+
+  
+  .codepen .cube .face:nth-child(3){transform: rotateY(270deg) translateZ(35px);}  /*antes habia un & en lugar de .codepen .cube .face*/
+  .codepen .cube .face:nth-child(4){transform: rotateY(360deg) translateZ(35px);}
+	  
+	  
+  .codepen .cube .face:nth-child(5){transform: rotateX(90deg) translateZ(35px);height: 60px;}  /*antes habia un & en lugar de .codepen .cube .face*/
+  .codepen .cube .face:nth-child(6){transform: rotateX(-90deg) translateZ(25px);height: 60px;}
+    
+@keyframes rotate {
+  100% {
+    transform: rotateY(360deg);
+  }
+}  
+
+@keyframes rotate2 {
+ 
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+            transform: rotateX(0) rotateY(0) rotateZ(0); 
+  }			
+
+ 100% {
+    transform: rotateZ(-360deg) rotateX(-360deg) rotateY(-360deg);  /*translateY(25px); rotateY(360deg);*/
+  }		
+  
+}
+
+
+
+.codepen2 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 10px solid green;
+  position: absolute;
+  top: calc(70% - 85px);
+  left: calc(15% - 85px);
+  transform-style: preserve-3d;
+  perspective: 10000px;
+  /*transform: rotateY(91deg);*/
+  animation: rotate1 5s infinite linear;
+  
+   box-sizing: border-box;
+   box-shadow: 0 0 10px #45e8ff, inset 0 0 10px #45e8ff;
+}
+
+@keyframes rotate1 {
+  100% {
+    transform: rotateX(360deg);
+  }
+}  
+
+
+
+/*  geometric02, hasta geometric06*/
+
+.view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-perspective: 400;
+          perspective: 400;
+
+}
+
+.plane {
+  width: 50px;
+  height: 50px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.plane.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: rotateX(60deg) rotateZ(-30deg);
+          transform: rotateX(60deg) rotateZ(-30deg);
+  -webkit-animation: rotate3 20s infinite linear;
+          animation: rotate3 20s infinite linear;
+}
+.plane.main .circle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  border-radius: 10%;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #2EE90D, inset 0 0 10px #2EE90D;
+}
+.plane.main .circle::before, .plane.main .circle::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10%;
+  height: 10%;
+  border-radius: 10%;
+  background: #2EE90D;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 2px #2EE90D;
+}
+.plane.main .circle::before {
+  -webkit-transform: translateZ(-90px);
+          transform: translateZ(-90px);
+}
+.plane.main .circle::after {
+  -webkit-transform: translateZ(90px);
+          transform: translateZ(90px);
+}
+.plane.main .circle:nth-child(1) {
+  -webkit-transform: rotateZ(72deg) rotateX(63.435deg);
+          transform: rotateZ(72deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(2) {
+  -webkit-transform: rotateZ(144deg) rotateX(63.435deg);
+          transform: rotateZ(144deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(3) {
+  -webkit-transform: rotateZ(216deg) rotateX(63.435deg);
+          transform: rotateZ(216deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(4) {
+  -webkit-transform: rotateZ(288deg) rotateX(63.435deg);
+          transform: rotateZ(288deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(5) {
+  -webkit-transform: rotateZ(360deg) rotateX(63.435deg);
+          transform: rotateZ(360deg) rotateX(63.435deg);
+}
+
+@-webkit-keyframes rotate3 {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+            transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate3 {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+            transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+
+
+
+
+
+.p_n_dimensiones_credits {
+  transform-style: preserve-3d;
+  perspective: 10000px;
+  animation: presentation_credits 7s ease-out infinite running;  /*recuerdo por las  de codepen animaciones css que wars es el nombre usado en keyframes media query*/
+
+}
+
+
+@keyframes presentation_credits {  /*a diferencia de las primeras anims css tiene 4 fases, pero solo lo entendimos cuando suprimimos probando la 4 fase,
+							la primera no haria  nada pero si es la que
+								va no la que llega al giro z de 60 , la segunda  parte de tal para volver no seria clavadamente la posicio nfinal de tal giro
+                              y la tercera parte de tal hasta volver a 0 grados								*/
+  0% {
+    opacity: 0;
+  /*  transform: scale(1) translateY(0.5em);  este valor  de 8px controla que se vaya desde arriba hacia abajo o centro
+									cualquier incremento ej 10em hace que el letero aparezca desde abajo hacia arriba o centro */
+									
+  -webkit-transform:scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0);
+            transform: scale(1) translateY(0.5em) rotateX(0) rotateY(0) rotateZ(0); 			/*la explicacion anterior es al tener el traslate parte de 8px en el ej y por eso se dirige hacia el centro	 pero porque se va encogiendo con el scale*/						
+  }
+  20% {   /*la animacion parte de 0 visibilidad y va incrementado hasta 1 y girando habiendo partido de horizontal qeu se supone es como se ha creado*/
+    opacity: 1;
+	transform: rotateZ(60deg);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(0.5);  /*si a 0% partimos de 1 en lugar de 1.5 de scale no vemos aparecer el titulo mas que al 90% cuando se va a toda leche hacia un lado*/
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(0.1) rotateZ(-60deg); /*translateZ(-1000em) rotateZ(-60deg);  era mayor de -1000 y a -1000 ya se iba muy ligero  mejor jugar con opacidad y scale*/
+  }
+}
+

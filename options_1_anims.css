@@ -1,0 +1,528 @@
+/*ahora mismo contiene los pre botones desplegables para la intro scene o main menu y los botones touch click que deje en atlantida.css de forma generica , ahora estan mejor aqui si van a reemplazarse por un desplegable conteniendolos por estetica moderna */
+#buttons_1_container {  /*como es el parent se compartira o machacara por el ultimo .css leido de arriba abajo en atlantida.html y esta claro es comun para guardar estetica como las clases*/
+  height: 45px;
+  position: absolute;
+  width: auto;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  padding-right: 5px;
+  padding-bottom: 5px; }
+ 	
+#opened_1_butoon {
+   /*transform: scale(0, 0);  esto lo ocultaria*/
+  -ms-transform: scale(2, 2);
+  -webkit-transform: scale(2, 2);
+  transform: scale(2, 2);
+  opacity: 1; lo impone la clase y esta a 0
+  z-index: 2;
+  float: right;
+  
+  display: block; /* este aparece en el codigo , exactamente en el .init options_anims pero ahora para la intro en atlantida.js y la clave la impone la clase control panel button*/
+  /*width: 45px;
+  height: 45px;*/
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDUiIHdpZHRoPSI0NSIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTEuOTA2MjUgMTEuOTA2MjEiPgogPGRlZnM+CiAgPGZpbHRlciBpZD0iYSIgc3R5bGU9ImNvbG9yLWludGVycG9sYXRpb24tZmlsdGVyczpzUkdCIiBoZWlnaHQ9IjEuMjQiIHdpZHRoPSIxLjI0IiB5PSItLjEyIiB4PSItLjEyIj4KICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMS45MjUiLz4KICA8L2ZpbHRlcj4KIDwvZGVmcz4KIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04OS4yOTcgLTEwNi41OSkiPgogIDxnIHRyYW5zZm9ybT0ibWF0cml4KC4yNjQ1OCAwIDAgLjI2NDU4IC0zOTMuMyAtMzkuODE2KSI+CiAgIDxnPgogICAgPGNpcmNsZSB0cmFuc2Zvcm09Im1hdHJpeCguOTQyNjEgMCAwIC45NDI2MCA4OTguNzEgLTIwMC42MSkiIGZpbHRlcj0idXJsKCNhKSIgY3k9IjgyMy43NSIgY3g9IjEwMDUuNSIgcj0iMTkuMjUiIGZpbGw9IiNmZmYiLz4KICAgIDxjaXJjbGUgdHJhbnNmb3JtPSJtYXRyaXgoLjk2MTA0IDAgMCAuOTYxMDQgODgwLjE3IC0yMTUuNzkpIiBjeT0iODIzLjc1IiBjeD0iMTAwNS41IiByPSIxOS4yNSIvPgogICA8L2c+CiAgIDxyZWN0IG9wYWNpdHk9IjAiIHRyYW5zZm9ybT0icm90YXRlKC05MCkiIHJ4PSIwIiByeT0iMCIgaGVpZ2h0PSIyNSIgd2lkdGg9IjI1IiB5PSIxODM0IiB4PSItNTg4LjM2Ii8+CiAgIDxnIHRyYW5zZm9ybT0icm90YXRlKDI0Ny41IDE4NTMgNzM5LjMyKSI+CiAgICA8cGF0aCBkPSJtMTI3Ni41IDgyNmMtNC4xNDIyIDAtNy41IDMuMzU3OC03LjUgNy41czMuMzU3OCA3LjUgNy41IDcuNSA3LjUtMy4zNTc4IDcuNS03LjUtMy4zNTc4LTcuNS03LjUtNy41em0wIDFjMy41ODk5IDAgNi41IDIuOTEwMiA2LjUgNi41cy0yLjkxMDEgNi41LTYuNSA2LjUtNi41LTIuOTEwMi02LjUtNi41IDIuOTEwMS02LjUgNi41LTYuNXoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDczMCAtMzcuNjM4KSIgZmlsbD0iI2ZmZiIvPgogICAgPHBhdGggZD0ibTIwMDQgNzg5LjM2aDVsLTEuNS0zaC0yeiIgZmlsbD0iI2ZmZiIvPgogICAgPGNpcmNsZSBzdHJva2Utd2lkdGg9IjEuNTIzNSIgdHJhbnNmb3JtPSJtYXRyaXgoLjY1NjQwIDAgMCAuNjU2NDAgMTE2OC4zIDI0OS4wOCkiIHN0cm9rZT0iI2ZmZiIgY3k9IjgzMyIgY3g9IjEyNzciIHI9IjQuNTY5IiBmaWxsPSJub25lIi8+CiAgICA8ZyBmaWxsPSIjZmZmIj4KICAgICA8cGF0aCBkPSJtMjAwNCA4MDIuMzZoNWwtMS41IDNoLTJ6Ii8+CiAgICAgPHBhdGggZD0ibTIwMTMgNzk4LjM2di01bDMgMS41djJ6Ii8+CiAgICAgPHBhdGggZD0ibTJlMyA3OTMuMzZ2NWwtMy0xLjV2LTJ6Ii8+CiAgICAgPHBhdGggZD0ibTIwMDkuMyA3ODkuNSAzLjUzNTYgMy41MzU1IDEuMDYwNi0zLjE4Mi0xLjQxNDItMS40MTQyeiIvPgogICAgIDxwYXRoIGQ9Im0yMDAwLjEgNzk4LjY5IDMuNTM1NiAzLjUzNTUtMy4xODIgMS4wNjA2LTEuNDE0Mi0xLjQxNDJ6Ii8+CiAgICAgPHBhdGggZD0ibTIwMDkuMyA4MDIuMjMgMy41MzU2LTMuNTM1NSAxLjA2MDYgMy4xODItMS40MTQyIDEuNDE0MnoiLz4KICAgICA8cGF0aCBkPSJtMjAwMy43IDc4OS41LTMuNTM1NiAzLjUzNTUtMS4wNjA2LTMuMTgyIDEuNDE0Mi0xLjQxNDJ6Ii8+CiAgICA8L2c+CiAgIDwvZz4KICA8L2c+CiA8L2c+Cjwvc3ZnPgo="); }
+
+
+#opened_1_button.hover,
+#hor_1_button_section .control_1_panel_button.hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%); } 
+  
+
+.control_1_panel_button {
+    display: none;      por defecto esta a none la ponemos a block en el codec para mostrarlo siempre el boton base a paritr del cual desplegamos el resto,
+						supuestamente esta a none porque se pasa a block seguramente tras el preloader que hemos anulado. Asi es en el nuevo .init 
+    opacity: 0; machaca el opacity a 1 del opned_r_button
+     al pasar a scale 2 se duplica el original
+	width: 45px;
+    height: 45px;
+    background-size: 45px 45px;
+	float: right;	
+    background-repeat: no-repeat;
+    z-index: 1;
+    position: relative;
+}
+
+.control_1_panel_button a {  lo de a es para los link de la barra vertical
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}  
+
+
+
+/* ****************** Desde aqui los elementos css son del  tuto 4 de tps ***********/
+
+
+div#select_level01_btn{
+    position: absolute;
+    left: 0px; bottom: 64px;
+    background-image: url(interface/level2_city.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 65px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+div#select_level02_btn{
+    position: absolute;
+    left: 0px; bottom: 130px;
+    background-image: url(interface/level1_encuentro.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+div#lanzar_level_btn{
+    position: absolute;
+    left: 0px; bottom: 200px;
+    background-image: url(interface/lanzar_nivel.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 57px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+div#anima_avatar_btn{
+    position: absolute;
+    left: 0px; bottom: 270px;
+    background-image: url(interface/animar_avatar-pendent.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+
+
+div#menu_select_avatar_btn{  /*este despliega a los avatares botones pero al hacerlo deberia ocultarse o servir para al volver a pincharlo encogerlos*/
+    position: absolute;
+    left: 0px; bottom: 5px;
+    background-image: url(interface/select_avatar.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 57px;
+    height: 63px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+
+div#select_amazon_btn{
+    position: absolute;
+    left: 5%; bottom: 5px;
+    background-image: url(interface/amazon_avatar.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+div#select_hunter_btn{
+    position: absolute;
+    left: 15%; bottom: 5px;
+    background-image: url(interface/hunter_avatar.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 65px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+div#select_hunter2_btn{
+    position: absolute;
+    left: 25%; bottom: 5px;
+    background-image: url(interface/jump_60_colorG.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+div#select_greek_btn{
+    position: absolute;
+    left: 35%; bottom: 5px;
+    background-image: url(interface/jump_60_colorG.png);
+    margin:0px 10px 30px 0px;
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+}
+
+
+div#fullscreen_btn{
+    position: absolute;
+    right: 100px; bottom: 1px;  /*separados de 5% a 9% se pegan pero no solapan*/
+   /* background-image: url(interface/jump_60_colorG.png);*/
+    /*margin:0px 10px 30px 0px;*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 50px;
+    height: 50px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+	cursor: pointer;
+}
+
+div#exit_fullscreen_btn{
+    position: absolute;
+    right: 50px; bottom: 1px;
+   /* background-image: url(interface/jump_60_colorG.png);*/
+   /* margin:0px 10px 30px 0px;*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 50px;
+    height: 50px;
+	 z-index: 2;
+    visibility:hidden; /*show*/
+	cursor: pointer;
+}
+
+
+div#exit_fullscreen_btn {
+    background-image: url('data:image/png;base64,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');
+}
+
+div#fullscreen_btn {
+    background-image: url('data:image/png;base64,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');
+}
+
+
+
+
+
+
+div#rot_scene_intro_btn{  /*aparece como sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 6px; bottom: 70%;
+    background-image: url(interface/rota_scene.png);
+   /* margin:0px 10px 30px 0px; /*64 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+div#presentacion_n_d_btn{  /*aparece como sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 6px; bottom: 55%;
+    background-image: url(interface/presentacion_anim.png);
+    /*margin:0px 10px 30px 0px; /*64 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 60px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+div#proximamente_btn{  /*aparece como sub subelmenentos al pulsar c o en mobil clickar boton*/
+    position: absolute;
+    right: 10px; bottom: 40%;
+    background-image: url(interface/proximamente_titol.png);
+	background-repeat: no-repeat;
+   /* margin:0px 10px 30px 0px; /*64 10 284 0*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 100px;
+    height: 60px;
+	 z-index: 2;
+    visibility:hidden; /*show tanto en mobiles com sin */
+}
+
+
+
+
+
+a#msg_select_char {
+	 position: absolute;
+	 width: 60px;
+	 height: 60px;
+	left: 10%;
+	bottom: 50%;
+   /* bottom: 5px; altura a la que esta el boton pertinente de select avatare. Si la altura del texto es de 100px a ver donde la dejamos encima o a un lado frente al boton select*/
+/*	transform: rotate(-90deg);*/
+    visibility: hidden;
+	z-index: 0;
+	display: block;
+	
+}
+
+
+
+
+
+a#msg_select_nivel {
+	 position: absolute;
+	 width: 60px;
+	 height: 60px;
+	     left: 10%; bottom: 130px; /*a la altura del level 2 o icono ciudad*/
+	/*left: 10%;
+    bottom: 50%;/*si la altura del texto es de 100px a ver donde la dejamos encima o a un lado frente al boton select*/
+/*	transform: rotate(-90deg);*/
+    visibility: hidden;
+	z-index: 0;
+	display: block;
+	
+}
+
+
+a#msg_lanza_game {
+	 position: absolute;
+	 width: 60px;
+	 height: 60px;
+	  left: 10%; bottom:  200px;  /*o 130px del level 2*/
+	/*left: 10%;
+    bottom: 50%;/*si la altura del texto es de 100px a ver donde la dejamos encima o a un lado frente al boton select*/
+/*	transform: rotate(-90deg);*/
+    visibility: hidden;
+	z-index: 0;
+	display: block;
+	
+}
+
+
+
+ 
+
+/*dese atlantida_1.css para si queremos personalizar*/
+div#menu_select_avatar_btn  > .clockwise2, div#menu_select_avatar_btn  >  .anticlockwise{
+  position: relative;
+  margin-right: -100px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*dese atlantida_1.css para si queremos personalizar*/
+div#select_level02_btn  > .clockwise2, div#select_level02_btn  >  .anticlockwise{
+  position: relative;
+  margin-right: -100px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+
+}
+
+
+
+
+
+
+/*dese atlantida_1.css para si queremos personalizar*/
+div#lanzar_level_btn  > .clockwise2, div#lanzar_level_btn  >  .anticlockwise{
+  position: relative;
+  margin-right: -100px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+
+}
+
+
+
+/*****************************desde aqui presentemaos los  div con los mensajes todos, en mismo lugar aunque esto no esta muy claro***********************************/
+ 
+  
+  /*REPETIMOS del  PATRON en atlantida_1.css EL SIGUIENTE BOTON DE AYUDA YA DENTRO EL JUEGO, AMBOS con javascript aplicado, el primero en ESTAN EN atlantida.js para info adicional al producto o juego , el del juego en main menu.js mejor dicho en options_1_anims.js
+  finalmente sera en options_annims para el ej de ayuda a seleccionar avatar*/
+div#help_info1_select_avatar {
+    position: absolute;
+	left: 15%;
+	bottom: 80%;  /*sin esto en algunas simulaciones de moviles como */
+	height: 100px;
+	visibility: hidden;  /*esto deberia ocultar el teaxto del parrafo siguiente y solo mostrarse por javascrtip*/
+ } 
+  
+ div#help_info1_select_avatar p {
+	
+    position: absolute;
+	height: 420px;
+	width: 400px;  /*necesario ajuste para en huwaei moviles verse al completo junto al 80% de bottom unas lineas antes par el elemento div*/
+	/*left: 35px;
+    top: -45px;  al separar previ de btn product info y no ser hijo*/  
+  
+  /*  background-repeat: no-repeat;
+    background-size: 100% 100%;
+	
+	color: #f6dd96;   amarillenta*/
+    /*margin-top: 20px;*/
+	font-size:26px;
+    font-family: "Linux_Biolinum";
+    line-height: 1.25;
+	text-align: center;
+	
+	 border-radius: 8px;
+    background-color: #000;
+   color: #fff; /*!important;*/
+
+    /* -moz-transform-origin: bottom;
+        -ms-transform-origin: bottom;
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+		
+		-moz-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        -ms-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        -webkit-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+
+		transform: scale(0, 0); esto lo ocultaria*/
+  
+
+}  
+
+
+body[lang="en"] div#help_info1_select_avatar div[lang="es"] {
+    display: none;
+}
+
+body[lang="es"] div#help_info1_select_avatar div[lang="en"] {
+    display: none;
+}
+   
+
+
+
+ 
+  
+  /*REPETIMOS del  PATRON en atlantida_1.css EL SIGUIENTE BOTON DE AYUDA YA DENTRO EL JUEGO, AMBOS con javascript aplicado, el primero en ESTAN EN atlantida.js para info adicional al producto o juego , el del juego en main menu.js mejor dicho en options_1_anims.js
+  finalmente sera en options_annims para el ej de ayuda a seleccionar avatar*/
+div#help_info2_select_avatar {
+    position: absolute;
+	left: 15%;
+	bottom: 30%;
+	height: 100px;
+	/*visibility: hidden;  /*esto deberia ocultar el teaxto del parrafo siguiente y solo mostrarse por javascrtip*/
+ } 
+  
+ div#help_info2_select_avatar p {
+	
+    position: absolute;
+	/*left: 35px;
+    top: -45px;  al separar previ de btn product info y no ser hijo*/  
+  
+  /*  background-repeat: no-repeat;
+    background-size: 100% 100%;
+	
+	color: #f6dd96;   amarillenta*/
+    /*margin-top: 20px;*/
+    font-family: "Linux_Biolinum";
+    line-height: 1.25;
+	text-align: center;
+	
+	 border-radius: 8px;
+    background-color: #000;
+   color: #fff; /*!important;*/
+
+}  
+
+body[lang="en"] div#help_info2_select_avatar div[lang="es"] {
+    display: none;
+}
+
+body[lang="es"] div#help_info2_select_avatar div[lang="en"] {
+    display: none;
+}
+   
+  
+
+  
+  
+ 
+  
+  /*REPETIMOS del  PATRON en atlantida_1.css EL SIGUIENTE BOTON DE AYUDA YA DENTRO EL JUEGO, AMBOS con javascript aplicado, el primero en ESTAN EN atlantida.js para info adicional al producto o juego , el del juego en main menu.js mejor dicho en options_1_anims.js
+  finalmente sera en options_annims para el ej de ayuda a seleccionar avatar*/
+div#help_info3_select_avatar {
+    position: absolute;
+	left: 15%;
+	bottom: 30%;
+	height: 100px;
+	/*visibility: hidden;  /*esto deberia ocultar el teaxto del parrafo siguiente y solo mostrarse por javascrtip*/
+ } 
+  
+ div#help_info3_select_avatar p {
+	
+    position: absolute;
+	/*left: 35px;
+    top: -45px;  al separar previ de btn product info y no ser hijo*/  
+  
+  /*  background-repeat: no-repeat;
+    background-size: 100% 100%;
+	color: #f6dd96;   amarillenta*/
+    /*margin-top: 20px;*/
+    font-family: "Linux_Biolinum";
+    line-height: 1.25;
+	text-align: center;
+	
+	 border-radius: 8px;
+    background-color: #000;
+   color: #fff; /*!important;*/
+
+}  
+
+body[lang="en"] div#help_info3_select_avatar div[lang="es"] {
+    display: none;
+}
+
+body[lang="es"] div#help_info3_select_avatar div[lang="en"] {
+    display: none;
+}
+   
+  
+
+  
+
+   
+
+div#contador_carga_scena_avatars {
+position: absolute;
+	left: 20%;
+	bottom: 10%;
+	height: 100px;	
+	width: 100px;
+	/*background-color: #fff;*/
+	color: #fff;
+	font-weight: bold;
+}
+
+

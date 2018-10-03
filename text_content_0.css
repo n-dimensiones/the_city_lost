@@ -1,0 +1,499 @@
+@font-face {
+    font-family: "Linux_Biolinum_Bold";
+    src: url("fonts/Linux_Biolinum/LinBiolinum_RB.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+html {
+	
+	/*no repeat sin darle altura y anchura deja educido a menos de la pantalla y quedna espacios en blanco sin ocupar
+	ha habido problemas al compartir boton y usarse este css arrastrando el fondo a ej portafolio index , se estrae boton para no compartir html tag y un cuerno*/
+    font-family: Linux_Biolinum_Bold, Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);/*negro fondo sino sera blanco tras el background-color*/
+}
+
+/*primera extraccion*/
+@media (orientation : portrait) {  /* si dejamos landscape  parece que fuerza siempre en mobiles a estar en portrait posicion*/
+    html {
+        width: 100vh;
+        position: absolute;
+        height: 100vw;
+        -moz-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        -ms-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        -webkit-transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        transform: rotate(-90deg) translateY(-50vh) translateX(50vw);
+        -moz-transform-origin: center;
+        -ms-transform-origin: center;
+        -webkit-transform-origin: center;
+        transform-origin: center;
+      /*  top: 50%;
+        left: 50%;*/
+    }
+}
+
+
+
+body {
+	background: url(interface/fondo_preloader0_render1024-576.png);  /*se ha movido de html a body porque lo vimos en portafolio usando repeitdamente por estar en html aqui y alli usarse por eluso del boton volver y se duplicaban , al estar en body ya uno manda , el ultimo*/
+	overflow: auto; /* hidden;   */
+    margin: 0;
+    padding: 0;
+	/*width: 100%; */
+	height: 100% ; /*hace que el fondo sea blanco*/
+		
+}
+
+button#zoom-in, button#zoom-out {
+	background-color: darkolivegreen;
+	border-color: darkgreen;
+    border-width: 5px;
+    /*position: absolute;  finalmente decido dejarlo fixed como el boton volver*/
+	position: fixed;
+    /* display: block; */
+    /* opacity: 1; */
+    /* visibility: visible; */
+     z-index: 3; /*para no ser machacado por el index 2 del start_text_cont u otro*/
+   
+	bottom: 1%;
+}
+button#zoom-in {
+	cursor: zoom-in;
+ left: 50%;	
+	
+}
+button#zoom-out {
+ left: 53%;	
+ cursor: zoom-out;
+}
+
+div#start_text_cont {
+	position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    /*background-color: #171717;  color previo al negro algo grisaceo*/
+	/*background-color: #000000; color negro fondo bajo el de image si este va a posteriori*/
+	background: url(images/composicion_tools_game512x384.png) bottom left;
+   /* background-position: center left;  se aplica a varias imagenes en ese orden, vaya tela y si solo 1 valor a todas
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    opacity: 1;*/
+   
+    -moz-transition: opacity .25s linear;
+    -ms-transition: opacity .25s linear;
+    -webkit-transition: opacity .25s linear;
+    transition: opacity .25s linear;
+	 z-index: 0;
+	
+}
+
+
+div.product_info > p ,h1,h2,li {
+	
+	display: block; /* creo sobra por las lineas anteriores si estas on las que si body en p es "es" la condicion, claro, pero si va antes que tales opera bien*/
+	/*position: absolute;   causa que se queden aglutinados todos los parrafos en una pagina en lugar de en sucesivas segun la extension del texto*/
+	position: relative;
+    /*left: 35%; se comento porque antes de crear la classe centered para parrafo si era quien centraba al parrafo pero tb estaba vieport a 1024
+	top; 10%;  */
+	left: 34%;   /*ahroa se esta machacando por algo porque vuelve a lado izq o el quitar absolute de position causa ese izq que esra el default, asi es pero claro necesita un position para tener efecto, pero relative*/
+	/*top: 34px;*/
+	/*height: 300px; no puede tener desde que es overflow este tinglaw */
+	
+	background-color: #35895B; /* fondo verdoso¨*/
+    background-position: center bottom;
+   /* background-color: lightblue;*/
+    width: 452px;
+    padding: 25px;
+    border: 25px solid navy;
+	/*background-image: url(images/composicion_tools_developer_game.png);*/
+	background-repeat: no-repeat;
+	
+   box-sizing: border-box;
+   box-shadow: 0 0 10px #45e8ff, inset 0 0 10px #45e8ff;
+	
+}
+
+
+
+body[lang="es"] div.product_info  h1[lang="en"] {
+    display: none;		
+}
+
+body[lang="es"] div.product_info h2[lang="en"] {
+    display: none;		
+}
+
+body[lang="es"] div.product_info li[lang="en"] {
+    display: none;		
+}
+
+body[lang="es"] div.product_info p[lang="en"] {
+    display: none;		
+}
+
+
+body[lang="en"] div.product_info h1[lang="es"], body[lang="en"] div.product_info h2[lang="es"], body[lang="en"] div.product_info p[lang="es"], body[lang="en"] div.product_info li[lang="es"]{
+    display: none;	
+}
+
+
+
+
+
+li {
+color: #fff;	
+}
+
+h2  {
+	 color: #fff;  /* dejamos blanco blue red  etc*/
+	
+}
+
+h1  {
+    color: #fff;  /* dejamos blanco blue red  etc*/
+    font-family: verdana;
+    font-size: 300%;
+}
+/*  no se usa para texto y yo lo hice asi que no volvamos a hacerlo por eso lo mantendremos ocmentado
+.centered {
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+   bring your own prefixes 
+  transform: translate(-50%, -50%);
+}
+*/
+
+div#tools_develop {  /*ya no la usamos por dejar en tag html su background o en div start_text_cont*/
+	display: none;
+	/*width:	 50%;*/
+	height: 384px;
+	/*background-size: 512px 334px;*/
+	 background-position: center bottom;
+	background-repeat: space;  /*parece deja espacio en las repeteciones en este caso queda bastante bien*/
+   
+	
+	
+	position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    /*background-color: #171717;  color previo al negro algo grisaceo*/
+	background-color: #000000; /*color negro fondo bajo el de image si este va a posteriori*/
+   
+    background-size: auto 100%;
+    /*background-repeat: no-repeat;*/
+    opacity: 1;
+    /*background-image: url(images/composicion_tools_game512x384.png);	*/
+    -moz-transition: opacity .25s linear;
+    -ms-transition: opacity .25s linear;
+    -webkit-transition: opacity .25s linear;
+    transition: opacity .25s linear;
+	 z-index: 0;
+	
+	
+	
+	
+	
+}
+
+ 
+ 
+ 
+div#patreon {
+	position: fixed;
+    top: 45%;
+	color: #fff;  /*color blanco para el texto*/
+	 font-family: "Linux_Biolinum";
+    line-height: 1.25;
+	text-align: center;
+   /* width: 66vh;
+    margin-top: 17vh;*/
+	right: 15px;
+	width: 20%;
+	margin-top: 8px;
+    z-index: 1;
+    display: block;   /*para por codigo pasar a inline-block*/
+	cursor: pointer;
+	  background-color: rgba(95, 132, 132, 0.8);
+	
+}
+
+
+body[lang="en"] div#patreon div[lang="es"] {
+    display: none;
+}
+
+body[lang="es"] div#patreon div[lang="en"] {
+    display: none;
+}
+
+ 
+ 
+ 
+
+div#paypal {
+position: fixed;
+top: 40%;
+/*bottom: 0;*/
+right: 50%;
+display: block;
+/*visibility: display;	*/
+/*mejor hacer esto desde codigo para visualizarlo y poder interaccionar 
+en un momento dado hasta posicionarlo en el lado desead seguramente ein interface.js este aclarado*/
+z-index: 2;	
+}
+
+
+div.product_info > #volver_a_main_page_btn  {  /*este despliega a los avatares botones pero al hacerlo deberia ocultarse o servir para al volver a pincharlo encogerlos
+				/*	position: relative; */
+	/*position: absolute; desde que dejo de ser tan rudo y se adapto a overflow desplazamiento y con zoom touch y pc de botones*/
+    left: 15%;
+	/*top: 340px; se quedaba muy abajo en los huawei*/
+	top: 30%;
+	/*este despliega a los avatares botones pero al hacerlo deberia ocultarse o servir para al volver a pincharlo encogerlos
+				/*	position: relative; */
+		   position:fixed;   /*esta es la clave que lo hace flotante pero no por eso ibamos a usar una clase llamada flotante como en su origen de uso */
+	
+	
+    background-image: url(interface/btn_back_green.png);
+/*
+	box-sizing: border-box;
+    box-shadow: 0 0 10px #45e8ff, inset 0 0 10px #45e8ff;
+				/*margin:130px -110px -130px 200px;
+				width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+				height: 100px;*/
+	width: 120px;
+    height: 120px;
+	opacity: 1;
+	visibility: visible;
+	z-index: 2;
+	display: inline-block;
+   
+			/*visibility:visibility; show
+			transform: translate(-50%, -50%);*/
+	cursor: pointer;		
+			
+}
+
+
+div.product_info > #volver_a_main_page_btn_hover  {  /*este despliega a los avatares botones pero al hacerlo deberia ocultarse o servir para al volver a pincharlo encogerlos*/
+ /*position: relative;*/
+   position: absolute;
+   /* left: 25%;
+	top: 340px;*/
+	left: 15%;
+	top: 30%;
+  
+    /*margin:130px 80px 0px 10px;    es rop righ booton y left*/
+    /*width: 100px;     Haber si recordamos que empiza a contar desde esquina izq superior de la imagen .png osea si pones 50px y es de 100px mostrara 50%
+    height: 100px;*/
+	width: 120px;
+    height: 120px;
+	z-index: 0;
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+	
+   background-image: url(interface/btn_back_hover.png);
+   
+   /*box-sizing: border-box;
+   box-shadow: 0 0 10px #45e8ff, inset 0 0 10px #45e8ff;
+	
+   /* visibility:visibility; show
+   transform: translate(-50%, -50%);*/
+}
+
+ /*  como solo va en pcs y no en touch lo comentamos, por los pelos casi destrozo la simulacion hover en moviles que vale para touch como para pcs
+div#product_info > #volver_a_main_page_btn:hover {   
+   background-image: url(interface/btn_back_hover.png);
+   box-sizing: border-box;
+   box-shadow: 0 0 10px #45e8ff, inset 0 0 10px #45e8ff;
+}
+*/
+
+
+
+
+
+/*************************************************  a partir de aqui copiamos   boton soc  de blend4web original y su css adaptado tras el con los mediaquery  aqui en este .css existentes mios sin portrati y landscape uso y que traslado al final para ampliarlos con soc*/
+
+
+/*******************   se repite desde atlantida_1.css porque si dejase tal .css en el .html text_cont habria conflictos sin resolver que ej machacan fondo  dev_tools ***************************/
+div#blender a{
+	top: 5%;
+	left: 2%;
+	position: fixed;
+	width: 20%;
+	height: 20%;
+    /*width: 412px;
+    height: 132px;*/
+    /*position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+    margin-left: 72px;*/
+   /* background-image: url(interface/brand.png);*/
+	 background-image: url("icons/blender_logo_link175x56.png");
+	 background-repeat: no-repeat;
+	 cursor: pointer;
+}	 
+div#gimp  a{	
+	top: 5%;
+	right: 2%;
+	width: 10%;
+	height: 20%;
+	position: fixed;
+    /*width: 132px;
+    height: 132px;
+    /*position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+    margin-left: 72px;
+   /* background-image: url(interface/brand.png);*/
+   background-image: url("icons/gimp_logo_link64x64.png");	 
+   background-repeat: no-repeat;
+   cursor: pointer;
+}
+
+div#soc_cont {
+    position: fixed;
+    right: 50%;
+    top: 65%;
+    width: 280px;
+    height: 160px;
+    background-image: url(interface/soc_bg_desk.png);
+}
+
+div#soc_cont a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+body[lang="es"] div#soc_cont a[lang="en"] {
+    display: none;
+}
+
+body[lang="en"] div#soc_cont a[lang="es"] {
+    display: none;
+}
+
+div#soc_cont > div.brand {
+    width: 76px;
+    height: 80px;
+    /*position: absolute;
+    left: 0;
+    top: 0;*/
+    margin-top: 20px;
+    margin-left: 72px;
+   /* background-image: url(interface/brand.png);*/
+	 background-image: url("data:image/png;base64,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"); 
+	
+}
+
+div#soc_cont > div.brand.hover {
+    background-position: -76px 0;
+}
+
+
+
+
+
+
+@media (max-height: 768px) and (min-width: 854px) {  /*altura max en mi desktop y parto de la max anchura del huaweig730 de 853. finalmente la text_content.html esta enre 853x445*/
+div.product_info > #volver_a_main_page_btn_hover , div.product_info > #volver_a_main_page_btn  {
+	left: 15%;
+	top: 340px;
+	}
+div#product_info  p,h1,h2 {
+/*	left: 24%;
+	top: 14px;   ya no tiene sentido en body overflow mode como es ahora*/
+	
+}	
+
+div#tools_develop {
+height: 192px;  /*es justo la mitad dl resto equipos*/
+	/*background-size: 512px 334px;*/
+/*	background-position: center top;
+	background-repeat: repeat;  repeat es mas apropiado para el huawei que space pero sino lo pasamos que hace aqui, me equipvoque y se lo puse a desktop y laptop? me equivoque pero por lo visto aqui no sirve  para redmi que lo necestia luego crearemos uno a continuacion entre huaweig730 que esta mas abajo  y el desktop */
+   }	
+}
+
+
+
+
+@media (max-height: 480px) and (max-width: 853px) {  /*altura max en mi desktop y parto de la anchura del huaweig730. finalmente la text_content.html alcanza el maximo a 853x445
+                                        para el redmi que nos afecta aqui , es de 480 e nlugar de 445 de huawei luego en total comprende desde 360 en lugar del huwaew a 335*/
+
+div#tools_develop {
+height: 340px;  /*s*/
+	/*background-size: 512px 334px;*/
+	background-position: center top;
+	background-repeat: repeat;  /*repeat es mas apropiado para el huawei que space */
+   }	
+   
+ div#soc_cont {
+	 right: 50%;
+	 top: 70%;
+}  
+
+
+div#paypal {
+	left: 0%;
+	top:50%;
+}   
+   
+}
+
+
+
+
+@media (min-height: 336px) and (min-width: 641px) {  /*altura max en mi desktop y parto de la anchura del huaweig730. finalmente la text_content.html esta enre 853x445*/
+													/*creo que el huwaei g730 deberia estar aqui entre ambos tag start_cont de pagina inicio y el de text content medidas del 100x100*/
+div.product_info > #volver_a_main_page_btn_hover , div.product_info > #volver_a_main_page_btn  {
+	left: 10%;
+	top: 250px;
+	}
+div.product_info  p,h1,h2,li,ul {
+	left: 24%;
+	/*top: 1px;    ya no tiene sentido en body overflow mode como es ahora*/
+	 padding: 5px;
+	
+}	
+
+div#soc_cont {
+	right: 0%;
+	 top: 80%;
+}
+
+div#paypal {
+	left: 0%;
+	top:90%;
+}
+
+
+}
+
+@media (max-width: 640px) and  (max-height: 335px)   {	/*la anterior de la tool con una serie de layouts predeterminados era 480x320 en landscape ahora dejamos medidas huaweig730*/
+														/*en pagina text_content.html muestra el tag start_cont 853x445*/	
+														/*en una segunda toma el redmi tiene ni mas ni menos uqe un poco mas de altura 360 en tag start_cont de pagina principal
+														y en text_content pagina de   */
+div.product_info > #volver_a_main_page_btn_hover , div.product_info > #volver_a_main_page_btn    {
+	left: 15%;
+	top: 2px;  /*antes fue 120px*/
+   }	
+div.product_info  p,h1,h2,li,ul {
+	left: 24%;
+	/*top: 8px;	antes fue 14px, ya no tiene sentido en body overflow mode como es ahora*/
+}   
+   
+}
+
